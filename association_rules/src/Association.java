@@ -22,7 +22,7 @@ public class Association {
                     counter++;
                 }
             }
-            suppValue = (counter/(dataset.size()-1.0))*100; //jak wczesniej odejmowałem 1 zamiast 1.0 to konwertowało calosc do int - dlaczego?
+            suppValue = (counter/(dataset.size()-1.0))*100;
             supportValues.get(i-1).add(Double.toString(suppValue));
             counter = 0;
         }

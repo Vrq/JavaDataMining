@@ -28,6 +28,7 @@ public class ObjectID implements Comparable<ObjectID> {
     public double getObjectWage() {
         return objectWage;
     }
+    public ClassLabelValue getClassName() { return className;}
 
     //setters:
     public void setClassName(ClassLabelValue newClassLabel) {

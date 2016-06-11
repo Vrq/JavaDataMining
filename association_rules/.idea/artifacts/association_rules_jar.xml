@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="association_rules:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/association_rules_jar</output-path>
+    <root id="archive" name="association_rules.jar">
+      <element id="module-output" name="association_rules" />
+    </root>
+  </artifact>
+</component>

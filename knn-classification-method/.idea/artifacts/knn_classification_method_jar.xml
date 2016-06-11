@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="knn-classification-method:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/knn_classification_method_jar</output-path>
+    <root id="archive" name="knn-classification-method.jar">
+      <element id="module-output" name="knn-classification-method" />
+    </root>
+  </artifact>
+</component>

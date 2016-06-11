@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AGDS:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AGDS_jar</output-path>
+    <root id="archive" name="AGDS.jar">
+      <element id="module-output" name="AGDS" />
+    </root>
+  </artifact>
+</component>

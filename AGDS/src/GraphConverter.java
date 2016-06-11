@@ -8,7 +8,7 @@ public class GraphConverter {
 
     public static GraphParam convertTableToGraph(List<List<String>> dataset){
         GraphParam graphDS = new GraphParam();
-        final int OBJECT_ROW_SIZE = dataset.get(0).size() - 1;
+        int OBJECT_ROW_SIZE = dataset.get(0).size() - 1;
 
         //adding the parameter names nodes to the graph:
         for(int labelIndex = 0; labelIndex<OBJECT_ROW_SIZE; labelIndex++){

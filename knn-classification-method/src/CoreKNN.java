@@ -87,9 +87,7 @@ public class CoreKNN {
 		});
 		
 	
-		for (Entry<String, Integer> entry : elementCount.entrySet()) {
-		     System.out.println("Key: " + entry.getKey() + ". Value: " + entry.getValue());
-		}
+
 
 		 System.out.println("--------");
 		
@@ -103,21 +101,83 @@ public class CoreKNN {
 
 
 	public static void main (String[] args) throws FileNotFoundException {
-		ArrayList<List<String>> dataset = DataReaderCSV.readDataFromCSV();
-		double[] tested = {10.1, 3.5, 2.4, 0.6};
-		ArrayList<List<String>> distanceArray = CoreKNN.sortDataset(tested, dataset);
-		int k = 20;
-		
-		System.out.println(dataset.get(0).size());
 
-		ArrayList<List<String>> sortedBest = CoreKNN.findBestClass(distanceArray, k);
-		
-		System.out.println("The: " + k + " nearest neighbours of the tested element are:");
-		for(List object: sortedBest) {
-			System.out.println(object);
+		Scanner reader = new Scanner(System.in);
+		reader.useLocale(Locale.ENGLISH);
+		System.out.println("Press enter to begin ");
+		String option = reader.nextLine();
+		int userVal;
+		double[] userTestRecord = new double[4];
+		ArrayList<List<String>> dataset = DataReaderCSV.readDataFromCSV();
+		int datasetSize = dataset.get(0).size() - 1;
+		while(!(option.equals("q"))) {
+
+			System.out.print("\n");
+			System.out.println("#---Dataset: IrisDataAll.csv---#");
+			System.out.println("#---Size: " + datasetSize + " records---#");
+			System.out.print("\n");
+			System.out.println("Choose an option from the menu. Enter 'q' to quit. ");
+			System.out.println("1 - Print the whole dataset");
+			System.out.println("2 - Print choosen record");
+			System.out.println("3 - Calculate the best fit for a test record");
+
+			option = reader.nextLine();
+
+			switch (option) {
+				case "1":
+					// printing the dataset in equal width columns:
+					for (int i = 0; i < dataset.get(0).size(); i++) {
+						for (int j = 0; j < dataset.size(); j++) {
+							System.out.printf("%-10s", dataset.get(j).get(i));
+						}
+						System.out.print("\n");
+					}
+					System.out.print("\n");
+					System.out.print("\n");
+					break;
+				case "2":
+					//printing the record with the number choosen by the user:
+					System.out.println("Please type in the record number (between 1 and " + datasetSize + ")");
+					userVal = reader.nextInt();
+					reader.nextLine();
+					System.out.println("Record with index: " + userVal);
+					for(int paramIndex = 0; paramIndex<dataset.size(); paramIndex++) {
+						System.out.printf("%-10s", dataset.get(paramIndex).get(userVal));
+					}
+					System.out.print("\n");
+					System.out.print("\n");
+					break;
+				case "3":
+					System.out.println("Please type in the values of the test record: ");
+					System.out.println(dataset.get(0).get(0));
+					userTestRecord[0] = reader.nextDouble();
+					System.out.println(dataset.get(1).get(0));
+					userTestRecord[1] = reader.nextDouble();
+					System.out.println(dataset.get(2).get(0));
+					userTestRecord[2] = reader.nextDouble();
+					System.out.println(dataset.get(3).get(0));
+					userTestRecord[3] = reader.nextDouble();
+					System.out.println("Choose the k for the kNN method:");
+					userVal = reader.nextInt();
+					reader.nextLine();
+					ArrayList<List<String>> distanceArray = CoreKNN.sortDataset(userTestRecord, dataset);
+					ArrayList<List<String>> sortedBest = CoreKNN.findBestClass(distanceArray, userVal);
+					System.out.println("The: " + userVal + " nearest neighbours of the tested element are:");
+					for(List object: sortedBest) {
+						System.out.println(object);
+					}
+
+					System.out.println("Best match: " + sortedBest.get(0).get(0));
+					System.out.print("\n");
+					System.out.print("\n");
+					break;
+				default:
+					break;
+			}
+
 		}
-		
-		System.out.println("Best match: " + sortedBest.get(0).get(0));
+
+
 
 
 	}

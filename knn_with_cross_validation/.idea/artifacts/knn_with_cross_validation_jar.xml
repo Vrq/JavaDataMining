@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="knn_with_cross_validation:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/knn_with_cross_validation_jar</output-path>
+    <root id="archive" name="knn_with_cross_validation.jar">
+      <element id="module-output" name="knn_with_cross_validation" />
+    </root>
+  </artifact>
+</component>

@@ -138,7 +138,7 @@ public class newCoreKNN {
             ArrayList<List<String>> learningDataset = new ArrayList(dataset);
             learningDataset.remove(flowerIndex);
 
-            //tutaj nam sie zlozonosc n^2 robi i widac zaczyna zamulać - dla zbioru 10000+ byloby ciezko
+
             winnerList = getWinnersForEveryK(flowerParams, dataset);
 
             //if the classified item class matches the validator then increment the correct answers count for k value

@@ -61,7 +61,10 @@ public class ParamName {
     //calculate the wages for the values and add them up to records:
     public void calculateNeighbourWages(String testValue, HashSet<ObjectID> bestObjects) {
         sortValues();
-        double valueRange = Double.parseDouble(getMaxValue().getValue())-Double.parseDouble(getMinValue().getValue());
+        double maxVal = Double.parseDouble(testValue) > Double.parseDouble(getMaxValue().getValue()) ? Double.parseDouble(testValue) : Double.parseDouble(getMaxValue().getValue());
+        double minVal = Double.parseDouble(testValue) < Double.parseDouble(getMinValue().getValue()) ? Double.parseDouble(testValue) : Double.parseDouble(getMinValue().getValue());
+        double valueRange = maxVal - minVal;
+
         for(ParamValue valueNode : valueList) {
             double wageValue = 1 - Math.abs(Double.parseDouble(valueNode.getValue()) - Double.parseDouble(testValue))/valueRange;
             valueNode.giveWageToObject(wageValue,bestObjects);

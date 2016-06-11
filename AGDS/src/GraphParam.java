@@ -89,6 +89,9 @@ public class GraphParam {
                 exactWinnerList.add(winnerList.get(objIndex));
             }
         }
+        if(exactWinnerList.isEmpty()) {
+            System.out.println("No objects with exact given values found");
+        }
         return exactWinnerList;
     }
 

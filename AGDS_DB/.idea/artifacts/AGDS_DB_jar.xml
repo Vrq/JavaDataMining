@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AGDS_DB:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AGDS_DB_jar</output-path>
+    <root id="archive" name="AGDS_DB.jar">
+      <element id="module-output" name="AGDS_DB" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
